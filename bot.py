@@ -101,7 +101,7 @@ async def on_member_join(member):
 
     # Dynamically search for other channels
     rules_channel = find_channel(guild, ['rules', 'rule', 'regulation', '📜'])
-    videos_channel = find_channel(guild, ['videos', 'video', 'clip', 'movie', '🎬'])
+    announcements_channel = find_channel(guild, ['announcement', 'news', 'broadcast', '📢'])
     general_chat = find_channel(guild, ['general', 'main', '🗨'])
 
     # Find the custom emoji by name (try with and without colons)
@@ -130,7 +130,7 @@ async def on_member_join(member):
         title=f"Welcome to {guild.name} Server",
         description=f"We hope you enjoy your time here !!!!\n\n"
                     f"{emoji_1}  {rules_channel.mention if rules_channel else '⁠📃｜rules'}\n"
-                    f"{emoji_1}  {videos_channel.mention if videos_channel else '⁠🎬｜videos'}\n"
+                    f"{emoji_1}  {announcements_channel.mention if announcements_channel else '⁠📢｜announcements'}\n"
                     f"{emoji_1}  {general_chat.mention if general_chat else '⁠🗨｜general-chat'}",
         color=discord.Color.blue()
     )
@@ -169,3 +169,4 @@ if __name__ == "__main__":
         bot.run(TOKEN)
     else:
         print("ERROR: DISCORD_TOKEN not found in .env file.")
+
