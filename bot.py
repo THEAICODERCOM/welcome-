@@ -101,7 +101,7 @@ async def on_member_join(member):
 
     # Dynamically search for other channels
     rules_channel = find_channel(guild, ['rules', 'rule', 'regulation', '📜'])
-    announcements_channel = find_channel(guild, ['announcement', 'news', 'broadcast', '📢'])
+    announcements_channel = find_channel(guild, ['announcements', 'announcement', 'news', 'broadcast', '📢', '📣'])
     general_chat = find_channel(guild, ['general', 'main', '🗨'])
 
     # Find the custom emoji by name (try with and without colons)
@@ -169,4 +169,5 @@ if __name__ == "__main__":
         bot.run(TOKEN)
     else:
         print("ERROR: DISCORD_TOKEN not found in .env file.")
+
 
